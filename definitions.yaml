@@ -1,0 +1,45 @@
+# definitions must have the following:
+# name (string): human readable name of the definition
+# allow_drop_outer_grouping (bool): whether or not this definition allows the dropping of outermost parens and still having a legal sentence
+# tokens (dict): an object of all the different operators, and associated list of string definitions for said operator
+#   must include: OR, AND, IF, IFF, NOT, (, )
+#   ( and ) must have the same number of definitions. they will be indexed matched to decide if they can be grouped together
+- name: formal
+  allow_drop_outer_grouping: false
+  tokens:
+    OR:
+      - 'v'
+    AND:
+      - '&'
+    IF:
+      - '->'
+    IFF:
+      - '<->'
+    NOT:
+      - '~'
+    (:
+      - '('
+    ):
+      - ')'
+
+- name: informal
+  allow_drop_outer_grouping: true
+  tokens:
+    OR:
+      - 'v'
+    AND:
+      - '&'
+      - '.'
+    IF:
+      - '->'
+    IFF:
+      - '<->'
+    NOT:
+      - '~'
+    (:
+      - '('
+      - '['
+    ):
+      - ')'
+      - ']'
+

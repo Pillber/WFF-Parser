@@ -1,5 +1,5 @@
 # WFF Parser
-A small parser and solver for well-formed forumlas (WFF) in philosopical language, written in Python.
+A small parser and solver for well-formed formulas (WFF) in philosopical language, written in Python.
 
 ## Example
 ```python

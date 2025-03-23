@@ -26,6 +26,7 @@ The parser's definition can be set during object creation, such as `Parser('form
 ### Solving
 To solve a set of premise sentences with a conclusion, create a Solver object. Then, set as many premises as wanted and only one conclusion. 
 The `solve()` method will return whether or not the premises and conclusion make a valid argument.
+You can set the definition of the internal parser of the solver to be whatever during solver creation, such as `Solver('formal')`. The default definition is the informal.
 
 See the Example above for an example.
 
@@ -37,8 +38,11 @@ The parser uses the concept of a definition to handle the tokenizing and parsing
 
 Examples can be found in the `definitions.yaml` file. Two are provided with the program: `formal`, and `informal`.
 
+
+## Testing
+`pytest` was used for unit tests of the program. To run the tests, install the `pytest` package, and run `pytest` from the root directory.
+
 ## Future Improvements
- - Solver definition setting: small chore to add supplying which definition to use for the solver
  - Better error reporting: more similiar to regular compilers where it shows which token caused the tokenizer/parser to fail
  - Short table method: try solving tables from the bottom up instead of top down (start with sentences, not sentence letters)
  - Custom operators: add support for user-defined operators, such as XOR. A much later problem.

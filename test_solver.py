@@ -1,4 +1,5 @@
 from solver import Solver
+from parser import ParseException
 import pytest
 
 
@@ -7,6 +8,12 @@ def test_set_conclusions():
     s.set_conclusion('A')
     with pytest.raises(Exception):
         s.set_conclusion('B')
+
+def test_formal_definition():
+    s = Solver('formal')
+
+    with pytest.raises(ParseException):
+        s.add_premise('A v B')
 
 
 def test_modus_ponens():

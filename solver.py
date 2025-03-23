@@ -2,10 +2,10 @@ from parser import Parser
 
 
 class Solver:
-    def __init__(self):
+    def __init__(self, definition='informal'):
         self.conclusion = None
         self.premises = []
-        self.parser = Parser() # set definition?
+        self.parser = Parser(definition) # set definition?
 
     def add_premise(self, sentence):
         premise = self.parser.parse(sentence)
